@@ -5,6 +5,8 @@ import viteCompression from 'vite-plugin-compression'
 import components from 'unplugin-vue-components/vite'
 import { VarletUIResolver } from 'unplugin-vue-components/resolvers'
 import legacy from '@vitejs/plugin-legacy'
+import Autoprefixer from 'autoprefixer'
+import WindiCSS from 'vite-plugin-windicss'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -18,6 +20,7 @@ export default defineConfig({
         legacy({
             targets: ["> 1%", "last 4 versions", "not dead"]
         }),
+        WindiCSS()
     ],
     resolve: {
         alias: {
@@ -28,5 +31,12 @@ export default defineConfig({
         host: '0.0.0.0',
         port: 8090,
         strictPort: false
+    },
+    css:{
+        postcss:{
+            plugins: [
+                Autoprefixer(),
+            ]
+        }
     }
 })
