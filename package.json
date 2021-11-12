@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@varlet/ui": "^1.22.7",
+    "@vitejs/plugin-legacy": "^1.6.2",
     "pinia": "^2.0.0-rc.15",
     "vue": "^3.2.16",
     "vue-router": "^4.0.12"
